@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+
+const routes: Routes = [
+    {
+        path: "graficas",
+        loadChildren: () => import("src/app/graficas/graficas.module").then(m => m.GraficasModule)
+    },
+    {
+        path: "**",
+        redirectTo: "graficas"
+    }
+];
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

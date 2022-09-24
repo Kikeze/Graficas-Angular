@@ -1,0 +1,12 @@
+
+
+<h2>Menu</h2>
+<hr>
+<ul class="list-group">
+    <li *ngFor="let item of menu"
+        class="list-group-item list-group-item-action"
+        [routerLink]="item.ruta"
+        routerLinkActive="active">
+        {{item.texto}}
+    </li>
+</ul>
